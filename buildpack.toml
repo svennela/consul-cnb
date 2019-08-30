@@ -1,0 +1,22 @@
+[buildpack]
+id = "org.cloudfoundry.consul"
+name = "Hashicorp Consul Server Buildpack"
+version = "1.6.0"
+
+[metadata]
+include_files = ["bin/build","bin/detect","buildpack.toml","config.json"]
+pre_package = "./scripts/build.sh"
+
+[[metadata.dependencies]]
+id = "consul"
+name = "Hashicorp Consul Server"
+sha256 = "06b9993384e5fad901e0a70185b198dc74f3f34e1660a40f194cd6095b5d59d4"
+stacks = ["org.cloudfoundry.stacks.cflinuxfs3","io.buildpacks.stacks.bionic"]
+uri = "https://releases.hashicorp.com/consul/1.6.0/consul_1.6.0_linux_amd64.zip"
+version = "1.6.0"
+
+[[stacks]]
+id = "org.cloudfoundry.stacks.cflinuxfs3"
+
+[[stacks]]
+id = "io.buildpacks.stacks.bionic"
